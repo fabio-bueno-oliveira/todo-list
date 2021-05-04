@@ -14,4 +14,4 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizar no browser.
 ### `yarn api:server`
 
 Roda a API na porta 4000.\
-Abra [http://localhost:4000/todos](http://localhost:4000/todos) para iniciar o servidor com a API.
+Abra [http://localhost:4000/todos](http://localhost:4000/todos) para acessar o servidor com a API.
