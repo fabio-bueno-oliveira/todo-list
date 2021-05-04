@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { todosActions } from '../../store/actions/todos';
 import ToDoWrapper from './styles';
@@ -8,8 +8,10 @@ const ToDo = (props) => {
   const dispatch = useDispatch()
 
   useEffect(() => { 
-        dispatch(todosActions.getTodos())
-  }, [])
+    dispatch(todosActions.getTodos())
+  }, [dispatch])
+
+  const todos = useSelector(state => state.todos)
 
   return (
     <>
@@ -17,7 +19,13 @@ const ToDo = (props) => {
         {props.title &&
           <h1>{props.title}</h1>
         }
-          {props.children}
+          <ul>
+            {todos.todosList.map((todo, key) =>
+              <li key={key}>
+                <input type='checkbox' />{todo.name}
+              </li>
+            )}
+          </ul>
       </ToDoWrapper>
     </>
   );

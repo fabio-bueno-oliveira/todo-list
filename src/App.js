@@ -8,10 +8,7 @@ function App() {
   return (
     <Provider store={Store}>
       <main className='App'>
-        <Todo list={true} />
-        <p>
-          Edit and save to reload.
-        </p>
+        <Todo title='Minha To Do List' />
       </main>
     </Provider>
   );

@@ -10,8 +10,17 @@ const ToDoWrapper = styled.div`
   min-height: 500px;
   padding: 0px 0 20px 0;
   width: 500px;
-  h1 {
-    font-family: 'Poppins', sans-sefif;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
   }
 `
 

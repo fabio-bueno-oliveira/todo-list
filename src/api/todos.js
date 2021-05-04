@@ -13,6 +13,7 @@ function getTodos() {
 
 function handleResponse(response) {
     return response.text().then(text => {
+        console.log("A")
         let data;
         data = text && JSON.parse(text);
         return data;

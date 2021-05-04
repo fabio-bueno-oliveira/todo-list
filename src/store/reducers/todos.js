@@ -3,7 +3,7 @@ import { todosTypes } from '../types/todos';
 const initialState = {
     requesting: false,
     success: false,
-    todos: [
+    todosList: [
         {
             id: "",
             name: "",
@@ -24,20 +24,14 @@ export function todosReducer(state = initialState, action) {
         return {
             requesting: false,
             success: true,
-            todos: [
-                {
-                    id: action.info.id,
-                    name: action.info.name,
-                    completed: action.info.completed
-                },
-            ],
+            todosList: action.info,
             error: ""
         };
         case todosTypes.GET_TODOS_FAILURE:
         return {
             requesting: false,
             success: false,
-            todos: [
+            todosList: [
                 {
                     id: "",
                     name: "",
