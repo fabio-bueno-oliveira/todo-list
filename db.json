@@ -1,0 +1,6 @@
+{
+    "todos": [
+      { "id": 1, "name": "Regar as plantas", "completed": false },
+      { "id": 2, "name": "Finalizar o teste para a Prontmed", "completed": true }
+    ]
+}
