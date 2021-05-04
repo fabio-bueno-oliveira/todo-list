@@ -13,6 +13,10 @@ const ToDo = (props) => {
 
   const todos = useSelector(state => state.todos)
 
+  const handleChangeStatus = (todo) => {
+    dispatch(todosActions.toggleTodo(todo.id, todo.name, todo.completed))
+  }
+
   return (
     <>
       <ToDoWrapper>
@@ -22,7 +26,12 @@ const ToDo = (props) => {
           <ul>
             {todos.todosList.map((todo, key) =>
               <li key={key}>
-                <input type='checkbox' />{todo.name}
+                <input 
+                  type='checkbox' 
+                  id={todo.id} 
+                  defaultChecked={todo.completed ? true : false} 
+                  onClick={() => handleChangeStatus(todo)}
+                /> <label htmlFor={todo.id}>{todo.name}</label>
               </li>
             )}
           </ul>
