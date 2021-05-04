@@ -1,5 +1,5 @@
 import { todosTypes } from '../types/todos';
-import { todosService } from '../../api/todos';
+import { todosService } from '../../api/';
 
 export const todosActions = {
     getTodos: getTodos

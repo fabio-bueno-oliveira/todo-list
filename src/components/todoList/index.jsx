@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todosActions } from '../../store/actions/todos';
 import axiosClient from '../../config/axios'
+import Input from '../common/input'
+import Checkbox from '../common/checkbox'
 import ToDoWrapper from './styles';
 
 const ToDo = (props) => {
@@ -57,7 +59,7 @@ const ToDo = (props) => {
             {newTodo.typing &&
               <li>
                 <label>
-                  <input type='text' value={newTodo.name} onChange={(e) => setNewTodo({...newTodo, name: e.target.value})} />
+                  <Input value={newTodo.name} onChange={(e) => setNewTodo({...newTodo, name: e.target.value})} />
                 </label>
                 <button onClick={() => addTodo(newTodo.name)}>Adicionar</button>
               </li>
@@ -65,12 +67,10 @@ const ToDo = (props) => {
             {list.map((todo, key) =>
               <li key={key}>
                 <label htmlFor={todo.id}>
-                  <input 
-                    type='checkbox' 
+                  <Checkbox 
                     id={todo.id}
                     checked={todo.completed}
                     onChange={() => updateTodo(todo)}
-                    disabled={todos.requesting}
                   /> {todo.name}
                 </label>
                 <span className='delete' onClick={() => deleteTodo(todo.id)}>Deletar</span>
