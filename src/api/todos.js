@@ -1,21 +1,9 @@
-const BASE_URL = 'http://localhost:4000';
+import axiosClient from '../config/axios'
 
 export const todosService = {
   getTodos
 }
 
-function getTodos() {
-    const requestOptions = {
-        method: 'GET'
-    };
-    return fetch(`${BASE_URL}/todos`, requestOptions).then(handleResponse);
+async function getTodos() {
+    return await axiosClient.get('/todos').then(function (response) {return response.data})
 }
-
-function handleResponse(response) {
-    return response.text().then(text => {
-        console.log("A")
-        let data;
-        data = text && JSON.parse(text);
-        return data;
-    });
-};
