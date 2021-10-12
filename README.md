@@ -1,17 +1,17 @@
-# TODO Prontmed - Fabio Bueno
+# TODO
 
-Teste de aplicação de Todo em React + Redux + Json Server
+My ToDo app built with React + Redux + Json Server
 
 ## Available Scripts
 
-No diretório do projeto, você pode rodar:
+On the project app, you can run:
 
 ### `yarn start`
 
-Roda a aplicação em development mode.\
-Abra [http://localhost:3000](http://localhost:3000) para visualizar no browser.
+Runs application in development mode.\
+Check [http://localhost:3000](http://localhost:3000) to see it running in browser :)
 
 ### `yarn api:server`
 
-Roda a API na porta 4000.\
-Abra [http://localhost:4000/todos](http://localhost:4000/todos) para acessar o servidor com a API.
+Runs API server in port 4000.\
+Check [http://localhost:4000/todos](http://localhost:4000/todos) to access the API server.
